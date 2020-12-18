@@ -5,7 +5,7 @@ public class Achivement {
     private String exercise;
     private int currentProgress;
     private int aim;
-    private boolean performed;
+    private boolean performed = false;
 
     public Achivement() {
 
@@ -40,7 +40,7 @@ public class Achivement {
     }
 
     public void setCurrentProgress(int currentProgress) {
-        this.currentProgress = currentProgress;
+        this.currentProgress += currentProgress;
     }
 
     public int getAim() {

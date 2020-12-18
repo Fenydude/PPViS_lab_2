@@ -67,12 +67,16 @@ public class TrainingPlan {
     }
 
     public void executeApproach(){
-
+        for (numberOfApproaches=0; numberOfApproaches< amountOfApproaches; numberOfApproaches++){
+            for (Exercise exercise : exercises){
+                Exercise.totalAmountOfExercisePerformed++;
+            }
+        }
     }
     public void addExercise(Exercise exercise){
-
+        exercises.add(exercise);
     }
     public void deleteExercise(Exercise exercise){
-
+        exercises.remove(exercise);
     }
 }

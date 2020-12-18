@@ -2,24 +2,30 @@ package Manager;
 
 import Model.Reminder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReminderManager {
-    private List<Reminder> reminders;
+    private List<Reminder> expectedReminders;
 
     public ReminderManager(){
-
+        expectedReminders = new ArrayList<>();
     }
 
-    public ReminderManager(List<Reminder> reminders) {
-        this.reminders = reminders;
+    public ReminderManager(List<Reminder> expectedReminders) {
+        this.expectedReminders = expectedReminders;
     }
 
-    public List<Reminder> getReminders() {
-        return reminders;
+    public List<Reminder> getExpectedReminders() {
+        return expectedReminders;
     }
 
-    public void setReminders(List<Reminder> reminders) {
-        this.reminders = reminders;
+    public void setExpectedReminders(List<Reminder> expectedReminders) {
+        this.expectedReminders = expectedReminders;
+    }
+
+
+    public void addReminder(Reminder reminder){
+        expectedReminders.add(reminder);
     }
 }

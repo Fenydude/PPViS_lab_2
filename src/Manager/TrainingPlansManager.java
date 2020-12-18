@@ -1,5 +1,6 @@
 package Manager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TrainingPlansManager {
@@ -8,6 +9,7 @@ public class TrainingPlansManager {
     private String intensity;
 
     public TrainingPlansManager(List<TrainingPlan> trainingPlans) {
+        this.intensity = "normal";
         this.trainingPlans = trainingPlans;
     }
 
@@ -18,6 +20,7 @@ public class TrainingPlansManager {
     }
 
     public TrainingPlansManager() {
+        trainingPlans = new ArrayList<>(7);
     }
 
     public List<TrainingPlan> getTrainingPlans() {
@@ -45,17 +48,14 @@ public class TrainingPlansManager {
     }
 
     public void addTrainingPlan(TrainingPlan trainingPlan){
-
+        trainingPlans.add(trainingPlan);
     }
 
     public void deleteTrainingPlan(TrainingPlan trainingPlan){
-
-    }
-    public void nextTrainingPlan(){
-
+        trainingPlans.remove(trainingPlan);
     }
 
     public void training(TrainingPlan trainingPlan){
-
+        trainingPlan.executeApproach();
     }
 }

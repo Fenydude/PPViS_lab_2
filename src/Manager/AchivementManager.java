@@ -2,6 +2,7 @@ package Manager;
 
 import Model.Achivement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AchivementManager {
@@ -14,6 +15,8 @@ public class AchivementManager {
     }
 
     public AchivementManager() {
+        expectedAchivements = new ArrayList<>();
+        completedAchivements = new ArrayList<>();
     }
 
     public List<Achivement> getCompletedAchivements() {
@@ -33,13 +36,14 @@ public class AchivementManager {
     }
 
     public void addAchivement(Achivement achivement){
-
+        expectedAchivements.add(achivement);
     }
     public void deleteAchivement(Achivement achivement){
-
+        moveToCompletedList(achivement);
+        expectedAchivements.remove(achivement);
     }
     public void moveToCompletedList(Achivement achivement){
-
+        completedAchivements.add(achivement);
     }
 
 }

@@ -39,4 +39,24 @@ public class Exercise {
     public void setNumberOfRepetitions(int numberOfRepetitions) {
         this.numberOfRepetitions = numberOfRepetitions;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Exercise exercise = (Exercise) o;
+
+        if (duration != exercise.duration) return false;
+        if (numberOfRepetitions != exercise.numberOfRepetitions) return false;
+        return name != null ? name.equals(exercise.name) : exercise.name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + duration;
+        result = 31 * result + numberOfRepetitions;
+        return result;
+    }
 }
